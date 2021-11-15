@@ -1,0 +1,8 @@
+version: "2.4"
+services:
+  products:
+    extends:
+      file: docker-compose-base.yml
+      service: spring-boot
+    environment:
+      - APP_SERVICE_NAME=products

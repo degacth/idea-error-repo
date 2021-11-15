@@ -1,0 +1,7 @@
+services:
+  spring-boot:
+    working_dir: /lib/app
+    image: gradle:7.3.0-jdk17
+    command: 'sh run.sh'
+    volumes:
+      - .:/lib/app
