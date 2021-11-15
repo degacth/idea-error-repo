@@ -15,6 +15,7 @@ subprojects {
     it.apply plugin: 'org.springframework.boot'
     it.apply plugin: 'io.spring.dependency-management'
     it.apply plugin: 'java'
+    it.apply plugin: 'scala'
 
     repositories {
         mavenCentral()
@@ -23,6 +24,7 @@ subprojects {
     }
 
     dependencies {
+        implementation 'org.scala-lang:scala-library:2.13.7'
         implementation 'org.springframework.boot:spring-boot-starter'
         implementation 'org.springframework.boot:spring-boot-starter-web'
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
