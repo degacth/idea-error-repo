@@ -11,6 +11,6 @@ services:
       - ./products:/app/products
       - ./eureka:/app/eureka
     environment:
-      - JAVA_OPTS=-Xms128m -Xmx256m
+      - _JAVA_OPTIONS=-Xmx256m
       - EUREKA_URI=http://eureka:8200/eureka/
       - SERVER_PORT=0

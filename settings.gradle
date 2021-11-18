@@ -7,4 +7,4 @@ pluginManagement {
 }
 
 rootProject.name = 'app'
-include 'products', 'eureka'
+include 'products', 'eureka', 'gateway'

@@ -18,3 +18,15 @@ services:
       - APP_SERVICE_NAME=eureka
     ports:
       - "8200:8200"
+
+  gateway:
+    extends:
+      service: spring-boot
+      file: docker-compose-base.yml
+    environment:
+      - SERVER_PORT=8080
+      - APP_SERVICE_NAME=gateway
+    ports:
+      - "8080:8080"
+    depends_on:
+      - eureka
