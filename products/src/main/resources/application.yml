@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: products-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI}
+  instance:
+    preferIpAddress: true
+    instance-id: ${spring.application.name}:${instanceId:${random.value}}
+#logging:
+#  level:
+#    com:
+#      netflix:
+#        eureka: off
+#        discovery: off

@@ -8,10 +8,11 @@ allprojects {
     group = 'com.alexmonad'
     version = '0.0.1-SNAPSHOT'
     sourceCompatibility = '17'
-
 }
 
 subprojects {
+    def projectName = it.name
+
     it.apply plugin: 'org.springframework.boot'
     it.apply plugin: 'io.spring.dependency-management'
     it.apply plugin: 'java'
@@ -23,10 +24,23 @@ subprojects {
         maven { url 'https://repo.spring.io/snapshot' }
     }
 
+    ext {
+        set('springCloudVersion', "2021.0.0-SNAPSHOT")
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
+
     dependencies {
         implementation 'org.scala-lang:scala-library:2.13.7'
         implementation 'org.springframework.boot:spring-boot-starter'
         implementation 'org.springframework.boot:spring-boot-starter-web'
+        if (projectName != "eureka") {
+            implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+        }
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
         developmentOnly 'org.springframework.boot:spring-boot-devtools'
     }

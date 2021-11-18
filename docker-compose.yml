@@ -2,7 +2,19 @@ version: "2.4"
 services:
   products:
     extends:
-      file: docker-compose-base.yml
       service: spring-boot
+      file: docker-compose-base.yml
     environment:
       - APP_SERVICE_NAME=products
+    depends_on:
+      - eureka
+
+  eureka:
+    extends:
+      service: spring-boot
+      file: docker-compose-base.yml
+    environment:
+      - SERVER_PORT=8200
+      - APP_SERVICE_NAME=eureka
+    ports:
+      - "8200:8200"

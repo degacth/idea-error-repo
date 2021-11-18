@@ -1,7 +1,15 @@
+version: "2.4"
 services:
   spring-boot:
-    working_dir: /lib/app
+    working_dir: /app
     image: gradle:7.3.0-jdk17
-    command: 'sh run.sh'
+    command: 'sh ./run.sh'
     volumes:
-      - .:/lib/app
+      - ./run.sh:/app/run.sh
+      - ./build.gradle:/app/build.gradle
+      - ./settings.gradle:/app/settings.gradle
+      - ./products:/app/products
+      - ./eureka:/app/eureka
+    environment:
+      - EUREKA_URI=http://eureka:8200/eureka/
+      - SERVER_PORT=0
