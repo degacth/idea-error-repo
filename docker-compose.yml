@@ -8,6 +8,7 @@ services:
       - APP_SERVICE_NAME=products
     depends_on:
       - eureka
+      - gateway
 
   eureka:
     extends:
@@ -16,6 +17,7 @@ services:
     environment:
       - SERVER_PORT=8200
       - APP_SERVICE_NAME=eureka
+      - EUREKA_INSTANCE_HOSTNAME=eureka
     ports:
       - "8200:8200"
 

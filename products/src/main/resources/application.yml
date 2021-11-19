@@ -9,9 +9,12 @@ eureka:
   instance:
     preferIpAddress: true
     instance-id: ${spring.application.name}:${instanceId:${random.value}}
-#logging:
-#  level:
-#    com:
-#      netflix:
-#        eureka: off
-#        discovery: off
+    statusPageUrlPath: /actuator
+    lease-renewal-interval-in-seconds: 5
+
+logging:
+  level:
+    com:
+      netflix:
+        eureka: off
+        discovery: off
