@@ -10,6 +10,7 @@ services:
       - ./settings.gradle:/app/settings.gradle
       - ./products:/app/products
       - ./eureka:/app/eureka
+      - ./gateway:/app/gateway
     environment:
       - _JAVA_OPTIONS=-Xmx256m
       - EUREKA_URI=http://eureka:8200/eureka/

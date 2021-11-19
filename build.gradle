@@ -7,7 +7,7 @@ plugins {
 allprojects {
     group = 'com.alexmonad'
     version = '0.0.1-SNAPSHOT'
-    sourceCompatibility = '17'
+    sourceCompatibility = "16"
 }
 
 subprojects {
@@ -38,6 +38,7 @@ subprojects {
         implementation 'org.scala-lang:scala-library:2.13.7'
         implementation 'org.springframework.boot:spring-boot-starter'
         implementation 'org.springframework.boot:spring-boot-starter-web'
+        implementation 'org.springframework.boot:spring-boot-starter-actuator'
         if (projectName != "eureka") {
             implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
         }
@@ -49,3 +50,4 @@ subprojects {
         useJUnitPlatform()
     }
 }
+targetCompatibility = JavaVersion.VERSION_16

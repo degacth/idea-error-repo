@@ -5,8 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer
 
 @EnableEurekaServer
-@SpringBootApplication
-class Service
+@SpringBootApplication class Service
 
 object Service extends App {
   SpringApplication.run(classOf[Service], args:_*)
