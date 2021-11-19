@@ -1,0 +1,6 @@
+axoniq:
+  axonserver:
+    name: Axon App
+    hostname: axon
+    devmode:
+      enabled: true

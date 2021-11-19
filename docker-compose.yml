@@ -32,3 +32,13 @@ services:
       - "8080:8080"
     depends_on:
       - eureka
+
+  axon:
+    image: axoniq/axonserver:4.5.8-jdk-17-dev
+    ports:
+      - "8024:8024"
+      - "8124:8124"
+    volumes:
+      - ./data/axon/data:/axonserver/data
+      - ./data/axon/events:/axonserver/events
+      - ./data/axon/config:/axonserver/config
