@@ -11,6 +11,7 @@ services:
       - ./products:/app/products
       - ./eureka:/app/eureka
       - ./gateway:/app/gateway
+      - ./domain:/app/domain
     environment:
       - _JAVA_OPTIONS=-Xmx256m
       - EUREKA_URI=http://eureka:8200/eureka/

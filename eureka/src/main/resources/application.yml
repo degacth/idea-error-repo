@@ -9,13 +9,13 @@ eureka:
     serviceUrl:
       defaultZone: ${EUREKA_URI}
 
-  instance:
-    lease-expiration-duration-in-seconds: 5
+#  instance:
+#    lease-expiration-duration-in-seconds: 5
   server:
     enable-self-preservation: false
-    expected-client-renewal-interval-seconds: 10
-    eviction-interval-timer-in-ms: 10000
-    renewal-threshold-update-interval-ms: 10000
+    expected-client-renewal-interval-seconds: 3
+    eviction-interval-timer-in-ms: 2000
+    renewal-threshold-update-interval-ms: 2000
 
 logging:
   level:

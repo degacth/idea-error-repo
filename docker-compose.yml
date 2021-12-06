@@ -6,6 +6,7 @@ services:
       file: docker-compose-base.yml
     environment:
       - APP_SERVICE_NAME=products
+      - AXON_AXONSERVER_SERVERS=axon:8124
     depends_on:
       - eureka
       - gateway
@@ -34,7 +35,7 @@ services:
       - eureka
 
   axon:
-    image: axoniq/axonserver:4.5.8-jdk-17-dev
+    image: axoniq/axonserver:4.5.9-jdk-17-dev
     ports:
       - "8024:8024"
       - "8124:8124"

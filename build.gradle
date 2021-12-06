@@ -12,6 +12,7 @@ allprojects {
 
 subprojects {
     def projectName = it.name
+    def domainServices = ["products"]
 
     it.apply plugin: 'org.springframework.boot'
     it.apply plugin: 'io.spring.dependency-management'
@@ -35,10 +36,16 @@ subprojects {
     }
 
     dependencies {
+        if (domainServices.contains(projectName)) {
+            implementation project(':domain')
+            implementation 'org.axonframework:axon-spring-boot-starter:4.5.5'
+        }
+
         implementation 'org.scala-lang:scala-library:2.13.7'
         implementation 'org.springframework.boot:spring-boot-starter'
         implementation 'org.springframework.boot:spring-boot-starter-web'
         implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
         if (projectName != "eureka") {
             implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
         }
