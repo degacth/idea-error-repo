@@ -7,7 +7,6 @@ plugins {
 allprojects {
     group = 'com.alexmonad'
     version = '0.0.1-SNAPSHOT'
-    sourceCompatibility = "16"
 }
 
 subprojects {
@@ -57,4 +56,9 @@ subprojects {
         useJUnitPlatform()
     }
 }
-targetCompatibility = JavaVersion.VERSION_16
+
+gradle.taskGraph.whenReady {
+    gradle.taskGraph.allTasks.forEach {
+        if (it.name == "bootJar" && it.project.name == "domain") it.onlyIf {false}
+    }
+}
