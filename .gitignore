@@ -39,4 +39,5 @@ out/
 gradlew*
 gradle
 /data
+/products/database*
 

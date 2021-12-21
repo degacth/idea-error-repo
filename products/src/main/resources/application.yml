@@ -16,6 +16,11 @@ spring:
       settings:
         web-allow-others: true
 
+server:
+  error:
+    include-messages: always
+    include-binding-errors: always
+
 eureka:
   client:
     serviceUrl:

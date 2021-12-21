@@ -9,7 +9,6 @@ services:
       - AXON_AXONSERVER_SERVERS=axon:8124
     depends_on:
       - eureka
-      - gateway
 
   eureka:
     extends:
