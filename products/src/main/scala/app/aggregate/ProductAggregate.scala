@@ -17,14 +17,6 @@ class ProductAggregate {
   @CommandHandler
   def this(create: CreateProductCommand) = {
     this()
-
-    val error = create match {
-      case CreateProductCommand(_, ProductData(_, price, _)) if price.compareTo(new BigDecimal(0)) < 0 => "price cannot be less or equal then '0'"
-      case CreateProductCommand(_, ProductData(title, _, _)) if Option(title).map(_.isBlank).get => "title cannot be empty"
-      case _ => ""
-    }
-    if (!error.isBlank) throw new IllegalArgumentException(error)
-
     AggregateLifecycle.apply {
       ProductCreatedEvent(create.id, create.product)
     }
