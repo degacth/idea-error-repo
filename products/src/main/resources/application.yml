@@ -21,6 +21,12 @@ server:
     include-messages: always
     include-binding-errors: always
 
+axon:
+  eventhandling:
+    processors:
+      product-group:
+        mode: subscribing
+
 eureka:
   client:
     serviceUrl:
