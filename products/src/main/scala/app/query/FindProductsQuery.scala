@@ -1,5 +1,3 @@
 package app.query
 
-class FindProductsQuery {
-
-}
+class FindProductsQuery
