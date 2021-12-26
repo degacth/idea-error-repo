@@ -1,5 +1,5 @@
 plugins {
-    id 'org.springframework.boot' version '2.6.0-SNAPSHOT' apply false
+    id 'org.springframework.boot' version '2.6.0' apply false
     id 'io.spring.dependency-management' version '1.0.11.RELEASE' apply false
     id 'java'
 }
@@ -7,6 +7,7 @@ plugins {
 allprojects {
     group = 'com.alexmonad'
     version = '0.0.1-SNAPSHOT'
+    sourceCompatibility = '17'
 }
 
 subprojects {
@@ -20,12 +21,10 @@ subprojects {
 
     repositories {
         mavenCentral()
-        maven { url 'https://repo.spring.io/milestone' }
-        maven { url 'https://repo.spring.io/snapshot' }
     }
 
     ext {
-        set('springCloudVersion', "2021.0.0-SNAPSHOT")
+        set('springCloudVersion', "2021.0.0")
     }
 
     dependencyManagement {
