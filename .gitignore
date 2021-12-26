@@ -36,8 +36,6 @@ out/
 ### VS Code ###
 .vscode/
 
-gradlew*
-gradle
 /data
 /products/database*
 
