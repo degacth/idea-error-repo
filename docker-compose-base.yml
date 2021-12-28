@@ -9,6 +9,7 @@ services:
       - ./build.gradle:/app/build.gradle
       - ./settings.gradle:/app/settings.gradle
       - ./products:/app/products
+      - ./orders:/app/orders
       - ./eureka:/app/eureka
       - ./gateway:/app/gateway
       - ./domain:/app/domain

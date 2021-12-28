@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: orders-service
+  datasource:
+    url: jdbc:h2:file:./database.h2;AUTO_SERVER=true
+    username: user
+    password: pwd
+    driver-class-name: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+
+server:
+  error:
+    include-messages: always
+    include-binding-errors: always
+
+axon:
+  eventhandling:
+    processors:
+      order-group:
+        mode: subscribing
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI}
+  instance:
+    preferIpAddress: true
+    instance-id: ${spring.application.name}:${instanceId:${random.value}}
+    statusPageUrlPath: /actuator
+    lease-renewal-interval-in-seconds: 1
+
+logging:
+  level:
+    com:
+      netflix:
+        eureka: off
+        discovery: off

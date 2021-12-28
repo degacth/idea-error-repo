@@ -37,5 +37,5 @@ out/
 .vscode/
 
 /data
-/products/database*
+database.h2*
 

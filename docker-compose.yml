@@ -10,6 +10,16 @@ services:
     depends_on:
       - eureka
 
+  orders:
+    extends:
+      service: spring-boot
+      file: docker-compose-base.yml
+    environment:
+      - APP_SERVICE_NAME=orders
+      - AXON_AXONSERVER_SERVERS=axon:8124
+    depends_on:
+      - eureka
+
   eureka:
     extends:
       service: spring-boot

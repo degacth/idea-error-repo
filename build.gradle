@@ -12,7 +12,7 @@ allprojects {
 
 subprojects {
     def projectName = it.name
-    def domainServices = ["products"]
+    def domainServices = ["products", "orders"]
 
     it.apply plugin: 'org.springframework.boot'
     it.apply plugin: 'io.spring.dependency-management'

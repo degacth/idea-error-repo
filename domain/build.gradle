@@ -1,0 +1,3 @@
+dependencies {
+    implementation 'org.axonframework:axon-core:4.0-M2'
+}
