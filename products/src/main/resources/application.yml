@@ -33,7 +33,8 @@ eureka:
       defaultZone: ${EUREKA_URI}
   instance:
     preferIpAddress: true
-    instance-id: ${spring.application.name}:${instanceId:${random.value}}
+    ## for multiple instances in docker compose
+#    instance-id: ${spring.application.name}:${instanceId:${random.value}}
     statusPageUrlPath: /actuator
     lease-renewal-interval-in-seconds: 2
 
